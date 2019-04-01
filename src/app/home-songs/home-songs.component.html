@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Platzi Music Api</h1>
+  <div class="ordenar">
+    <button (click)="ordenarAZ()">ordenar A-Z</button>
+    <button (click)="ordenarZA()">ordenar Z-A</button>
+  </div>
+  
+  <app-change-band (cambiarBanda)=cambiarBandasParent($event)></app-change-band>
+
+  <div *ngIf="loading">Cargando...</div>
+  <input *ngIf="!loading" class="buscar" placeholder="Buscar en {{ band }}" (keyup)="onSearch($event)">
+  <div *ngIf="!loading" class="flexgrid">
+    <div class="col" *ngFor="let song of songs">
+      <img src="{{song.album.images[0].url}}">
+      <p>{{ song.name }}</p>
+    </div>
+  </div>
+</div>

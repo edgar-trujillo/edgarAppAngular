@@ -1,0 +1,22 @@
+header {
+  background: #652b2b;
+  .logo {
+    font-weight: bold;
+    img {
+      width: 40px;
+    }
+  }
+  nav {
+    justify-self: right;
+    ul {
+      list-style-type: none;
+      margin: 0; padding: 0;
+      li {
+        float: right;
+        a {
+          padding: 1.5em;
+         }
+      }
+    }
+  }
+}

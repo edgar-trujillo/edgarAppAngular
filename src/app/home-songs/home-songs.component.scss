@@ -1,0 +1,32 @@
+img {
+  width: 90%;
+  margin: 0 5%;
+}
+p {
+  text-align: center;
+  margin-top: 0;
+}
+.buscar{
+  appearance: none;
+  background-color: none;
+  border: 1px solid #4CAF50;
+  line-height: 0;
+  font-size: 17px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: #4CAF50;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+  margin: 10px;
+  
+  &:focus {
+    outline: none;
+    background-color: #d8ffb4;
+    color:black;
+  } 
+}
