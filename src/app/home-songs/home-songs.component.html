@@ -1,18 +1,18 @@
 <div class="container">
-  <h1>Platzi Music Api</h1>
-  <div class="ordenar">
-    <button (click)="ordenarAZ()">ordenar A-Z</button>
-    <button (click)="ordenarZA()">ordenar Z-A</button>
-  </div>
+  <h1>Edgar con Platzi Music Api</h1>
   
   <app-change-band (cambiarBanda)=cambiarBandasParent($event)></app-change-band>
 
   <div *ngIf="loading">Cargando...</div>
   <input *ngIf="!loading" class="buscar" placeholder="Buscar en {{ band }}" (keyup)="onSearch($event)">
+
+  <app-sort-songs *ngIf="!loading" (sortSong)="sortSongsParent($event)"></app-sort-songs>
+
   <div *ngIf="!loading" class="flexgrid">
-    <div class="col" *ngFor="let song of songs">
+    <div class="col card" *ngFor="let song of songs">
       <img src="{{song.album.images[0].url}}">
-      <p>{{ song.name }}</p>
+      <p class="title">{{ song.name }}</p>
+      <p class="duration">Duración: {{ msToMin(song.duration_ms) }} min</p>
     </div>
   </div>
 </div>

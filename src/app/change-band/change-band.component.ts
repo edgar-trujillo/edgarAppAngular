@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-change-band',
@@ -8,14 +7,17 @@ import { ApiService } from '../api.service';
 })
 export class ChangeBandComponent implements OnInit {
 
-  constructor(private apiService: ApiService){}
-
+  band = 'queen';
   @Output() cambiarBanda = new EventEmitter();
   ngOnInit() {
   }
 
   cambiarBandas(band) {
+    if (this.band == band) {
+      return;
+    }
     this.cambiarBanda.emit(band);
+    this.band = band;
   }
 
 }

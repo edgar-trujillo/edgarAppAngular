@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { HomeSongsComponent } from './home-songs/home-songs.component';
 import { ChangeBandComponent } from './change-band/change-band.component';
+import { SortSongsComponent } from './sort-songs/sort-songs.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChangeBandComponent } from './change-band/change-band.component';
     NavComponent,
     AboutComponent,
     HomeSongsComponent,
-    ChangeBandComponent
+    ChangeBandComponent,
+    SortSongsComponent
   ],
   imports: [
     BrowserModule,

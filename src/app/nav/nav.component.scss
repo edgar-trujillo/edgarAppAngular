@@ -1,5 +1,6 @@
 header {
   background: #652b2b;
+  max-height: 100px;
   .logo {
     font-weight: bold;
     img {
@@ -8,9 +9,12 @@ header {
   }
   nav {
     justify-self: right;
+    display: inline-flex;
+    width: 90%;
     ul {
       list-style-type: none;
       margin: 0; padding: 0;
+      width: 100%;
       li {
         float: right;
         a {
@@ -18,5 +22,10 @@ header {
          }
       }
     }
+  }
+  a {
+    width: 10%;
+    display: inline-flex;
+    max-height: 70px;
   }
 }

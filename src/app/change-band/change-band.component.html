@@ -1,6 +1,8 @@
 <div class="bandas">
-  <button (click)="cambiarBandas('queen')">Queen</button>
-  <button (click)="cambiarBandas('the beatles')">The beatles</button>
-  <button (click)="cambiarBandas('the doors')">Doors</button>
-  <button (click)="cambiarBandas('rolling stones')">Rolling stones</button>
+  <label>Selecciona una banda: </label>
+  <button [ngClass]="{'active': band == 'queen' ? true : false}" (click)="cambiarBandas('queen')">Queen</button>
+  <button [ngClass]="{'active': band == 'the beatles' ? true : false}" (click)="cambiarBandas('the beatles')">The Beatles</button>
+  <button [ngClass]="{'active': band == 'the doors' ? true : false}" (click)="cambiarBandas('the doors')">The Doors</button>
+  <button [ngClass]="{'active': band == 'rolling stones' ? true : false}" (click)="cambiarBandas('rolling stones')">Rolling Stones</button>
+  <button [ngClass]="{'active': band == 'pink floyd' ? true : false}" (click)="cambiarBandas('pink floyd')">Pink Floyd</button>
 </div>

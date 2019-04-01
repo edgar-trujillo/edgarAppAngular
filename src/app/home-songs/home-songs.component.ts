@@ -27,6 +27,13 @@ export class HomeSongsComponent implements OnInit {
 	  });
   }
 
+  msToMin(ms) {
+    const min = Math.floor(ms / 60000);
+    let sec = ((ms % 60000 / 1000).toFixed(0));
+    sec = ('00'+sec).slice(-2);
+    return `${min}:${sec}`;
+  }
+
   cambiarBandasParent(band) {
     this.loading = true;
     this.apiService.getSongs(band).subscribe(
@@ -60,12 +67,20 @@ export class HomeSongsComponent implements OnInit {
     this.songs = filterList;
   }
 
-  ordenarAZ() {
-    console.log('ordenar a z');
+  sortSongsParent(type) {
+    switch(type) {
+      case 'a-z':
+        this.songs.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
+        break;
+      case 'z-a':
+      this.songs.sort((a,b) => (a.name < b.name) ? 1 : ((b.name < a.name) ? -1 : 0)); 
+       break;
+      case '+-':
+       this.songs.sort((a,b) => (a.duration_ms < b.duration_ms) ? 1 : ((b.duration_ms < a.duration_ms) ? -1 : 0)); 
+      break;
+      case '-+':
+        this.songs.sort((a,b) => (a.duration_ms > b.duration_ms) ? 1 : ((b.duration_ms > a.duration_ms) ? -1 : 0)); 
+      break;
+    }
   }
-
-  ordenarZA() {
-    console.log('ordenar z a');
-  }
-
 }
